@@ -9,10 +9,20 @@ load_dotenv()
 llm = HuggingFaceEndpoint(
     repo_id = 'Qwen/QwQ-32B',
     task='text_generation',
-    temperature = 0
+    temperature = 0.8
 )
 
 model = ChatHuggingFace(llm = llm)
-result = model.invoke('tell me a funny 5 line poem that includes sarcasm')
+
+template = PromptTemplate(
+    template = 'tell me a 5 line poem of {poet} that includes sarcasm',
+    input_variables= ['poet']
+)
+
+prompt = template.invoke(
+    {'poet':'Jaun Alia'}      
+)
+
+result = model.invoke(prompt)
 
 print(result.content)
