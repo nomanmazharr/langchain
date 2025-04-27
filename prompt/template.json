@@ -1,0 +1,21 @@
+# template.json
+
+{
+    "name": null,
+    "input_variables": [
+        "budget_input",
+        "destination_input",
+        "duration_input",
+        "interests_input",
+        "style_input"
+    ],
+    "optional_variables": [],
+    "output_parser": null,
+    "partial_variables": {},
+    "metadata": null,
+    "tags": null,
+    "template": "\nYou are a travel assistant tasked with generating a personalized travel itinerary for the user. \nThe user will provide information about their trip, including:\n- Destination: {destination_input}\n- Travel Duration: {duration_input}\n- Interests: {interests_input}\n- Budget: {budget_input}\n- Preferred Travel Style: {style_input}\n\nBased on the above inputs, create an itinerary that includes:\n1. A daily breakdown of activities for the given duration, considering the user's interests and preferred travel style.\n2. Budget-friendly recommendations for accommodation, meals, and transportation.\n3. Suggestions for local experiences or hidden gems related to the user's interests.\n",
+    "template_format": "f-string",
+    "validate_template": true,
+    "_type": "prompt"
+}
